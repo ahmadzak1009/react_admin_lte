@@ -13,7 +13,7 @@ router.post("/send", async (req, res) => {
 
   try {
     const response = await sgMail.send(msg);
-    res.send("sukses");
+    res.json({ msg });
   } catch (err) {
     res.status(400).send(err);
   }
